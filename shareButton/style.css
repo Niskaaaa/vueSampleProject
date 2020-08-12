@@ -1,0 +1,121 @@
+/*全局样式设置*/
+* {
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  img {
+    border: 0;
+  }
+  body {
+    background: #eee;
+  }
+
+
+  .social-btns .btn.facebook .fa {
+    color: #3b5998;
+  }
+  .social-btns .btn.twitter .fa {
+    color: #00aff0;
+  }
+  .social-btns .btn.google .fa {
+    color: #dc4a38;
+  }
+  .social-btns .btn.instagram .fa {
+    color: #bf00ff;
+  }
+  .social-btns .btn.pinterest .fa {
+    color: #cc0000;
+  }
+
+
+  .social-btns .btn .fa {
+    /*设置默认时链接所示样式*/
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);/*缩放*/
+  }
+  .social-btns .btn:focus .fa,/*选择获得焦点的按钮样式*/
+  .social-btns .btn:hover .fa {
+    /*设置鼠标划过时链接所示样式*/
+    color: #fff; /*改变其颜色*/
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  .social-btns .btn .fa {
+    /*对 Font Awesome 提供的图标设置大小和垂直对齐方式*/
+    font-size: 38px;
+    vertical-align: middle;
+  }
+
+
+  .social-btns {
+    height: 90px;
+    margin: 80px auto;
+    font-size: 0;
+    text-align: center; /*水平居中方式*/
+  }
+  .social-btns .btn {
+    display: inline-block; /*将按钮设置为不独占一行的块级元素*/
+    background-color: #fff;
+    width: 90px;
+    height: 90px;
+    line-height: 90px; /*设置行高*/
+    margin: 0 10px;
+    text-align: center;
+    position: relative; /*设置为相对定位*/
+    overflow: hidden; /*对溢出元素内容区的内容进行隐藏处理*/
+    border-radius: 28%; /*对 DIV 边框进行圆角处理*/
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1); /*对 DIV 边框进行圆角处理*/
+    opacity: 0.99; /*指定不透明度。从0.0透明到1.0完全不透明*/
+  }
+
+
+  .social-btns .btn:before {
+    /*在每个 btn 元素的内容之前设置 top、left 的值，即设置未触碰按钮时 btn 位置*/
+    top: 90%;
+    left: -110%;
+  }
+  .social-btns .btn:focus:before,
+  .social-btns .btn:hover:before {
+    /*调整触碰按钮时 btn 位置*/
+    top: -10%;
+    left: -10%;
+  }
+  .social-btns .btn:before {
+    content: "";
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    /*把 btn:before 进行顺时针翻转45°*/
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  /*设置 btn:before 的颜色，即触碰后按钮的背景颜色*/
+  .social-btns .btn.facebook:before {
+    background-color: #3b5998;
+  }
+  .social-btns .btn.twitter:before {
+    background-color: #00aff0;
+  }
+  .social-btns .btn.instagram:before {
+    background-color: #bf00ff;
+  }
+  .social-btns .btn.google:before {
+    background-color: #dc4a38;
+  }
+  .social-btns .btn.pinterest:before {
+    background-color: #cc0000;
+  }
+
+
+  .social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fa {
+  transition: all 0.35s; /*全部样式 0.35秒 缓动*/
+  transition-timing-function: cubic-bezier(
+    0.31,
+    -0.105,
+    0.43,
+    1.59
+  ); /*规定过渡效果的速度*/
+}

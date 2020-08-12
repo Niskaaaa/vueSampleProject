@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #app {
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--切换频繁使用v-show更加省事-->
+    <div id="app">
+
+        <img :src="imgArr[index]">
+        <a href="#" @click="prev" v-show="index!=0">上一张</a>
+        <a href="#" @click="next" v-show="index<imgArr.length-1">下一张</a>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                imgArr: ["./1 (1).jpeg", "./1 (2).jpg", "./1 (1).jpg"],
+                index: 0,
+                flag1: true,
+                flag2: true,
+            },
+            methods: {
+                prev: function () {
+                    this.index--;
+
+                    if (this.index == this.imgArr.length)
+                        flag2 = false;
+                    if (this.index == 0)
+                        flag1 = false;
+                },
+                next: function () {
+                    this.index++;
+                    if (this.index == this.imgArr.length)
+                        flag2 = false;
+                    if (this.index == 0)
+                        flag1 = false;
+                }
+
+            },
+        })
+    </script>
+</body>
+
+</html>

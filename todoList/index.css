@@ -1,0 +1,57 @@
+body{
+    width: 100%;
+}
+
+#app{
+    width: 500px;
+    margin:0 auto;
+  ;
+}
+
+
+.header{
+    text-align: center;
+}
+
+input{
+    padding: 20px;
+}
+
+ul{
+
+    
+    list-style:none
+}
+
+li:first-child{
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+    border-top: 1px solid gray;
+}
+li{
+    box-shadow: 0 0 10px #888888;
+    padding: 20px;
+    border-bottom:1px solid gray;
+    border-left:1px solid gray;
+    border-right:1px solid gray
+}
+
+li:hover{
+    background-color: honeydew; 
+}
+   
+li:hover .btn{
+
+    display: inline;
+}
+
+.btn{
+    display: none;
+    float: right;
+
+}
+
+
+footer{
+    float: right;
+}
