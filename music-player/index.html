@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>music-player</title>
+</head>
+
+<style>
+  [v-cloak]{
+    display: none;
+}
+
+</style>
+
+<body>
+  <div class="wrap">
+    <div id="app" v-cloak>
+    <div class="search_bar">
+      <input type="text" autocomplete="off" v-model="query" @keyup.enter="searchMusic">
+    </div>
+
+    <ul>
+      <li v-for="item in musicList" @click="playMusic(item.id)"><b>{{item.name}}</b></li>
+    </ul>
+
+    <audio ref='audio':src='musicUrl' controls></audio>
+  </div>
+  </div>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/dist/build.js"></script>
+  
+</body>
+
+</html>

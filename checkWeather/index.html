@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,21 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
-  />
-   
+
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>       <!-- 引入样式 -->
+
+
 </head>
+
 <body>
     <div id="app">
         <div class="search_form">
             <div class="form_group">
                 <h1>天知道</h1>
-                <input type="text" v-model="city" @keyup.enter="search" class="input_txt"
-                placeholder="请输入查询天气">
-                <i class="fa fa-search" aria-hidden="true" @click="search"></i>
+                <input type="text" v-model="city" @keyup.enter="search" class="input_txt" placeholder="请输入查询天气">
+
+                <el-button type="primary" icon="el-icon-search" @click="search">搜索</el-button>
             </div>
 
             <div class="hotkey">
@@ -34,13 +36,18 @@
 
         <ul class="list">
             <li v-for="(item,index) in weatherList">
-               <span>{{item.date}}</span> <span>{{item.low}}</span>  {{item.high}}
+                <span>{{item.date}}</span> <span>{{item.low}}</span> {{item.high}}
             </li>
         </ul>
 
     </div>
- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
+    
+
 </body>
+
 </html>
